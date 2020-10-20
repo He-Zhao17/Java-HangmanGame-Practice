@@ -5,32 +5,50 @@
 
 public class Scoreboard {
     // Add instance variables here.
+    String CorrectGuesses;
+    String IncorrectGuesses;
+    String Solution;
 
- // Complete both constructors.
+    // Complete both constructors.
     public Scoreboard() {
+        CorrectGuesses = " ";
+        IncorrectGuesses = " ";
+        Solution = " ";
 
     }
     public Scoreboard(String initialGuesses, String initialSolution) {
-
+        CorrectGuesses = initialGuesses;
+        IncorrectGuesses = " ";
+        Solution = initialSolution;
     }
 
     // Add accessors and mutators here. I've put in one to get you started.
     public String getCorrectGuesses() {
-        return correctGuesses;
+        return CorrectGuesses;
+    }
+    public void setCorrectGuesses(String CorrectGuesses_set) {
+        CorrectGuesses = CorrectGuesses_set;
     }
 
-// Print out the scoreboard for the user.
+    public String getIncorrectGuesses() {
+        return IncorrectGuesses;
+    }
+    public void setIncorrectGuesses(String IncorrectGuesses_set) {
+        IncorrectGuesses =IncorrectGuesses_set;
+    }
+
+    public String getSolution() {
+        return Solution;
+    }
+    public void setSolution(String Solution_set) {
+        Solution = Solution_set;
+    }
+
+    // Print out the scoreboard for the user.
     public void display() {
-
-    }
-
-    // You can use this to test your scoreboard. You'll need to remove it once you're ready to run HangmanGame.
-
-    public static void main(String[] args) {
-        Scoreboard s1 = new Scoreboard();
-        s1.display();
-        Scoreboard s2 = new Scoreboard("ABC", "*A*B*C");
-        s2.display();
+        System.out.println("The right letters you have guessed:\0" + CorrectGuesses + "\n");
+        System.out.println("The wrong letters you have guessed:\0" + IncorrectGuesses + "\n");
+        System.out.println("Now, the partial solution of the word:\0 " + Solution + "\n");
     }
 
 }
